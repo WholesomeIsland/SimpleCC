@@ -1,1 +1,2 @@
-*.simplec linguist-language=pascal
+*.simplec linguist-language=lua
+keywords.h linguist-language=c
