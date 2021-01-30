@@ -1,4 +1,8 @@
 #include <stdio.h>
+declare void test
+Call printf("Calling a self declared function")
+end
 main then 
 Call printf("Hello World From SimpleC!")
+Call test()
 end
