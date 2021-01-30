@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
 	if (argc != 3)
 	{
-		std::cout << "scc: Error, 3 arguments only." << std::endl;
+		std::cout << "scc: Error, 2 arguments only." << std::endl;
 		return 1;
 	}
 	ofstream outputfile(argv[2]);

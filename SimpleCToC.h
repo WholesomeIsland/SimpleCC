@@ -59,8 +59,9 @@ std::string Process(std::string strtp) {
         {
             spltmp[it].append(";");
         }
-        for each (keyword var in keywords)
+        for(int i = 0; i <= 8; i++)
         {
+        	keyword var = keywords[i];
             replaceAll(spltmp[it], var.scword, var.cword);
         }
     }
