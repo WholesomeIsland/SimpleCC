@@ -1,0 +1,2 @@
+all:
+	$(CC) scc.cpp
