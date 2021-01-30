@@ -58,6 +58,10 @@ std::string Process(std::string strtp) {
         if (line.find(" = ") != string::npos)
         {
             spltmp[it].append(";");
+        }        
+        if (line.find("declare ") != string::npos)
+        {
+            spltmp[it].append("(){");
         }
         for(int i = 0; i <= 7; i++)
         {
