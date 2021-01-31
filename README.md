@@ -32,3 +32,7 @@ here is a list of all the keywords,
 if then end main switch else uint --[[all valid C types]] Call declare --[[Any thing not listed here is the same way you do it in C]]
 ```
 ###### there is no pascal in this repo. i had to change simplec to pascal for syntax highlighting
+
+
+# License
+This is licensed under the GPL-v3.0
