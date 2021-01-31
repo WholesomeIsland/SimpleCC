@@ -21,7 +21,7 @@ end
 ```
 that would translate to,
 ```c
-declare void ){test(){
+void ){test(){
 ```
 so please be careful.
 
