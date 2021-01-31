@@ -24,3 +24,10 @@ that would translate to,
 declare void ){test(){
 ```
 so please be careful.
+
+# keywords
+here is a list of all the keywords,
+
+```lua
+if then end main switch else uint {all valid C types} Call declare
+```
