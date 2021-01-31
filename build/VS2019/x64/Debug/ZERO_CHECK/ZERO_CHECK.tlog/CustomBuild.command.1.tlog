@@ -1,0 +1,10 @@
+^T:\SCC\SCC\SIMPLECC\BUILD\VS2019\CMAKEFILES\B10B04289A480C936D1C8304CF2EE4E9\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -ST:/scc/scc/SimpleCC -BT:/scc/scc/SimpleCC/build/VS2019 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file T:/scc/scc/SimpleCC/build/VS2019/scc.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -15,28 +15,13 @@ vector<sccError> sccGetErrors(string filetxt){
     string tmp = filetxt;
     vector<string> spltmp = split(tmp, string("\n"));
     vector<sccError> errors = vector<sccError>();
-for (int it = 0; it != spltmp.size(); it++)
+    for (int it = 0; it != spltmp.size(); it++)
     {    
         string line = spltmp[it];
-        if (line.find("declare ") != string::npos)
+        if (line.find("declare") != string::npos)
         {
-            vector<string> splline = split(spltmp[it], string(" "));
-            string nline = string(splline[1].append(string(" ").append(splline[2])).append("("));
-            for (int  i = 3; i < splline.size(); i++)
-            {
-                nline.append(string(" ") + splline[i]);
-            }
-            spltmp[it] = nline;
-            spltmp[it].append("){");
-            nline = Process(nline);
-            vector<string> splnline = split(nline, " ");
-            for(int i = 0; i <= 8; i++)
-        {
-        	keyword var = keywords[i];
-            if(splnline[2].find(var.cword) != string::npos){
-                errors.push_back(sccError(string("Syntax Error: Keyword appears in name of a function on line ") + to_string(it),1));
-            }
-        }
+            errors.push_back(sccError(string("Warning: Make sure that no keywords are in the function name. line: ") + to_string(it),1));
         }
     }
+    return errors;
 }

@@ -2,7 +2,7 @@
 //
 
 #include "SimpleCToC.h"
-
+#include "libscc.h"
 using namespace std;
  string helpstr = R"(Welcome to scc, the simpleC transpiler.
 flags:
@@ -24,4 +24,7 @@ int main(int argc, char** argv)
 	ofstream outputfile(argv[2]);
 	outputfile << Process(readFile(argv[1]));
 	return 0;
+		vector<sccError> errors = sccGetErrors(readFile(argv[1]));
+		vector<string> splline = split("declare int thenifmainswitch end", string(" "));
+		cout << errors[0].error << endl;
 }
