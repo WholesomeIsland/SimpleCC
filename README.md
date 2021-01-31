@@ -29,5 +29,5 @@ so please be careful.
 here is a list of all the keywords,
 
 ```lua
-if then end main switch else uint {all valid C types} Call declare {Any thing not listed here is the same way you do it in C}
+if then end main switch else uint {all valid C types} Call declare //{Any thing not listed here is the same way you do it in C}
 ```
