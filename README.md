@@ -36,3 +36,7 @@ if then end main switch else uint --[[all valid C types]] Call declare --[[Any t
 
 # License
 This is licensed under the GPL-v3.0
+
+
+#CI 
+![CI](https://github.com/WholesomeIsland/SimpleCC/workflows/CI/badge.svg)
