@@ -24,8 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       # Runs a set of commands using the runners shell
       - name: gen makefile and make
-        run: |
-          cd build && mkdir makefile && cd makefile && cmake ../../ && make
+        run: cd build && mkdir makefile && cd makefile && cmake ../../ && make
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ./scc
+          
