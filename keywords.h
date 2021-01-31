@@ -1,3 +1,4 @@
+#include <malloc.h>
 typedef struct keyword {
     char* scword;
     char* cword;

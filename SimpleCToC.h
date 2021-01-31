@@ -61,7 +61,14 @@ std::string Process(std::string strtp) {
         }        
         if (line.find("declare ") != string::npos)
         {
-            spltmp[it].append("(){");
+            vector<string> splline = split(spltmp[it], string(" "));
+            string nline = string(splline[1].append(string(" ").append(splline[2])).append("("));
+            for (int  i = 3; i < splline.size(); i++)
+            {
+                nline.append(string(" ") + splline[i]);
+            }
+            spltmp[it] = nline;
+            spltmp[it].append("){");
         }
         for(int i = 0; i <= 8; i++)
         {
