@@ -23,8 +23,10 @@ int main(int argc, char** argv)
 	}
 	ofstream outputfile(argv[2]);
 	outputfile << Process(readFile(argv[1]));
-	return 0;
 		vector<sccError> errors = sccGetErrors(readFile(argv[1]));
-		vector<string> splline = split("declare int thenifmainswitch end", string(" "));
-		cout << errors[0].error << endl;
+		vector<string> splline = split(readFile(argv[1]), string("\n"));
+		for(int i = 0; i < errors.size(); i++){
+      std::cout << errors[i].error << std::endl;
+    }
+	return 0;
 }

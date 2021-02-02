@@ -1,0 +1,3 @@
+/home/runner/SimpleCC/build/mkfile/CMakeFiles/rebuild_cache.dir
+/home/runner/SimpleCC/build/mkfile/CMakeFiles/scc.dir
+/home/runner/SimpleCC/build/mkfile/CMakeFiles/edit_cache.dir

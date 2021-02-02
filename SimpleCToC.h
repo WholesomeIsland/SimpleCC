@@ -51,6 +51,9 @@ std::string Process(std::string strtp) {
     for (int it = 0; it != spltmp.size(); it++)
     {
         string line = spltmp[it];
+        if(line.find("#include") != string::npos){
+          spltmp[it].append("\n");
+        }
         if (line.find("Call ") != string::npos)
         {
             spltmp[it].append(";");
