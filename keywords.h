@@ -29,3 +29,9 @@ void InitKeywords() {
     keywords[8].cword = " ";
     keywords[8].scword = "declare ";
 }
+void UnInitKeywords() {
+    for (int i = 0; i < 9; i++)
+    {
+        free(&keywords[i]);
+    }
+}

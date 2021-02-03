@@ -84,5 +84,6 @@ std::string Process(std::string strtp) {
     {
         rtnval += spltmp[it];
     }
+    UnInitKeywords();
     return rtnval;
 }
