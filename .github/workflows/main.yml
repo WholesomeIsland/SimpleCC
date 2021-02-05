@@ -50,7 +50,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2 
       - name: gen makefile and build
-        run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make
+        run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make && pwd
       - uses: actions/upload-artifact@v2
         with:
           path: /home/runner/work/SimpleCC/SimpleCC/build/makefile/scc
