@@ -36,10 +36,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: microsoft/setup-msbuild@v1.0.2
       # Runs a set of commands using the runners shell
       - name: gen makefile and make
         run: cd build && cd VS2019 && msbuild scc.sln
         
       - uses: actions/upload-artifact@v2
         with:
-          path: /home/runner/work/SimpleCC/SimpleCC/build/makefile/scc
+          path: "%GITHUB_WORKSPACE%/build/VS2019/Debug/scc.exe"
