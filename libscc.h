@@ -1,4 +1,5 @@
 #include "SimpleCToC.h"
+#include "./cparser/src/parser/parser.h"
 #include <string>
 class sccError {
     public:
@@ -20,7 +21,7 @@ vector<sccError> sccGetErrors(string filetxt){
         string line = spltmp[it];
         if (line.find("declare") != string::npos)
         {
-            errors.push_back(sccError(string("Warning: Make sure that no keywords are in the function name. line: ") + to_string(it),1));
+            errors.push_back(sccError(string("Warning: Make sure that no keywords are in the function name. on line: ") + to_string(it),1));
         }
     }
     return errors;

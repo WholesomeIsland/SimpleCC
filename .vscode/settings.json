@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "vector": "c",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "parser.h": "c"
     }
 }

@@ -3,7 +3,7 @@ declare void test int t
 Call printf("Calling a self declared function\n")
 t = 6
 end
-main then 
+main then
 Call printf("Hello World From SimpleC!\n")
 int t = 0
 Call test(t)
