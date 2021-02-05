@@ -49,5 +49,5 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2 
-      - name: gen xcode and build
-        run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && ls
+      - name: gen makefile and build
+        run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make
