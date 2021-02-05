@@ -60,4 +60,5 @@ it should output a executable called scc. you can add this directory to your pat
 for make use the command found in the github actions workflow file under run.
 
 ## Getting prebuilt binaries
-A prebuilt binary is avalible for linux and windows. go to actions and the latest succsesful workflow will have a binary for you. they are bundled together in a zip file.
+A prebuilt binary is avalible for linux, windows and macos. go to actions and the latest succsesful workflow will have a binary for you. they are bundled together in a zip file.
+Im pretty sure all fo them are 64 bit binaries.
