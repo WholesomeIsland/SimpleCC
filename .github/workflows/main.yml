@@ -39,7 +39,7 @@ jobs:
       - uses: microsoft/setup-msbuild@v1.0.2
       # Runs a set of commands using the runners shell
       - name: gen makefile and make
-        run: mkdir build && cd build && mkdir VS2019 && cd VS2019 && cmake ../../ && msbuild scc.sln
+        run: mkdir build && cd build && mkdir VS2019 && cd VS2019 && cmake ../../ && msbuild scc.sln && pwd
         
       - uses: actions/upload-artifact@v2
         with:
