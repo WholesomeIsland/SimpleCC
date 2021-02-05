@@ -40,7 +40,7 @@ This is licensed under the GPL-v2.0
 # CI 
 ![CI](https://github.com/WholesomeIsland/SimpleCC/workflows/CI/badge.svg)
 
-#Building
+# Building
 ## Dependancies
 To build scc, you need,
 1. libc
