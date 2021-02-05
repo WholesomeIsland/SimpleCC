@@ -43,4 +43,4 @@ jobs:
         
       - uses: actions/upload-artifact@v2
         with:
-          path: "./build/VS2019/Debug/x64/scc.exe"
+          path: "D:/a/SimpleCC/SimpleCC/build/VS2019/Debug/scc.exe"
