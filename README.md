@@ -39,3 +39,20 @@ This is licensed under the GPL-v2.0
 
 # CI 
 ![CI](https://github.com/WholesomeIsland/SimpleCC/workflows/CI/badge.svg)
+
+#Building
+## Dependancies
+To build scc, you need,
+1. libc
+2. libc++
+3. a c++ compiler
+4. cmake or VS2019
+
+## building
+
+you can use cmake to build projects for your build system of choice, or you can use the included VS2019 prject files in the build directory.
+#### CMake
+```
+cd build && mkdir projfiles && cmake ../../ && [inset build command here]
+```
+it should output a executable called scc. you can add this directory to your path or if on linux you can just move it to a location in your path.
