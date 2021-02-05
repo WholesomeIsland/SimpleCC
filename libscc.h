@@ -1,5 +1,4 @@
 #include "SimpleCToC.h"
-#include "./cparser/src/parser/parser.h"
 #include <string>
 class sccError {
     public:

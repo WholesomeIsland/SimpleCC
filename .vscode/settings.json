@@ -2,6 +2,8 @@
     "files.associations": {
         "vector": "c",
         "xstring": "cpp",
-        "parser.h": "c"
+        "parser.h": "c",
+        "lexer.h": "c",
+        "types.h": "c"
     }
 }
