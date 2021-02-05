@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-ubuntu:
+  ubuntu-build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -39,8 +39,15 @@ jobs:
       - uses: microsoft/setup-msbuild@v1.0.2
       # Runs a set of commands using the runners shell
       - name: gen makefile and make
-        run: mkdir build && cd build && mkdir VS2019 && cd VS2019 && cmake ../../ && msbuild scc.sln && pwd
+        run: mkdir build && cd build && mkdir VS2019 && cd VS2019 && cmake ../../ && msbuild scc.sln
         
       - uses: actions/upload-artifact@v2
         with:
           path: "D:/a/SimpleCC/SimpleCC/build/VS2019/Debug/scc.exe"
+  macos-build: 
+    runs-on: macos-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2 
+      - name: gen makefile and make
+        run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && xcodebuild -scheme macOS build
