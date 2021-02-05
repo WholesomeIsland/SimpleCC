@@ -1,4 +1,6 @@
+#ifndef __APPLE__
 #include <malloc.h>
+#endif
 typedef struct keyword {
     char* scword;
     char* cword;
