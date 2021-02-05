@@ -53,4 +53,4 @@ jobs:
         run: mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make && pwd
       - uses: actions/upload-artifact@v2
         with:
-          path: /home/runner/work/SimpleCC/SimpleCC/build/makefile/scc
+          path: /Users/runner/work/SimpleCC/SimpleCC/build/makefile/scc
