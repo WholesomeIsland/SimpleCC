@@ -4,12 +4,7 @@
 #include "SimpleCToC.h"
 #include "libscc.h"
 using namespace std;
- string helpstr = R"(Welcome to scc, the simpleC transpiler.
-flags:
-	-h,--help display this message.
-usage:
-	scc [inputfile] [outputfile]
- )";
+ string helpstr = "Welcome to scc, the simpleC transpiler.\nflags:\n-h,--help display this message.\nusage:\nscc [inputfile] [outputfile]";
 int main(int argc, char** argv)
 {
 	if (argv[1] == "-h" || argv[1] == "--help")
