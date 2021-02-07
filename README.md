@@ -53,11 +53,14 @@ To build scc, you need,
 you can use cmake to build projects for your build system of choice, or you can use the included VS2019 prject files in the build directory.
 #### CMake
 ```
-cd build && mkdir projfiles && cmake ../../ && [insert build command here]
+Ubuntu
+mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make
+Windows
+ mkdir build && cd build && mkdir VS2019 && cd VS2019 && cmake ../../ && msbuild scc.sln
+ Mac
+ mkdir build && cd build && mkdir makefile && cd makefile && cmake ../../ && make
 ```
-it should output a executable called scc. you can add this directory to your path or if on linux you can just move it to a location in your path.
-
-for make use the command found in the github actions workflow file under run.
+it should output a executable called scc. you can add this directory to your path or move it into a folder in your path.
 
 ## Getting prebuilt binaries
 A prebuilt binary is avalible for linux, windows and macos. go to actions and the latest succsesful workflow will have a binary for you. they are bundled together in a zip file.
