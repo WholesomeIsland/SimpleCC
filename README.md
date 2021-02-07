@@ -46,7 +46,7 @@ To build scc, you need,
 1. libc
 2. libc++
 3. a c++ compiler
-4. cmake
+4. cmake 
 Windows
 5. version of VS CMake supports
 6. msbuild in your path <-- Not necessarily needid if building with VS
