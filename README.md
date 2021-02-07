@@ -49,7 +49,7 @@ To build scc, you need,
 4. cmake 
 #### Windows
 5. version of VS CMake supports
-6. msbuild in your path <-- Not necessarily needid if building with VS
+6. msbuild in your path <-- Not necessarily needed if building with VS
 ## building
 
 you can use cmake to build projects for your build system of choice, or you can use the included VS2019 prject files in the build directory.
