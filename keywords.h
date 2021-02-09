@@ -5,9 +5,9 @@ typedef struct keyword {
     char* scword;
     char* cword;
 }keyword;
-keyword keywords[9];
+keyword keywords[11];
 void InitKeywords() {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 11; i++)
     {
         keyword* k = (keyword*)malloc(sizeof(keyword));
         keywords[i] = *k;
@@ -30,9 +30,13 @@ void InitKeywords() {
     keywords[7].scword = "Call ";
     keywords[8].cword = " ";
     keywords[8].scword = "declare ";
+    keywords[9].cword = " && ";
+    keywords[9].scword = " and ";
+    keywords[9].cword = " || ";
+    keywords[9].scword = " or ";
 }
 void UnInitKeywords() {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 11; i++)
     {
         free(&keywords[i]);
     }
