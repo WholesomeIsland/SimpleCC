@@ -73,7 +73,7 @@ std::string Process(std::string strtp) {
             spltmp[it] = nline;
             spltmp[it].append("){");
         }
-        for(int i = 0; i <= 8; i++)
+        for(int i = 0; i <= 11; i++)
         {
         	keyword var = keywords[i];
             replaceAll(spltmp[it], var.scword, var.cword);
