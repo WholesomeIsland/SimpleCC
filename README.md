@@ -67,3 +67,5 @@ it should output a executable called scc. you can add this directory to your pat
 ## Getting prebuilt binaries
 A prebuilt binary is avalible for linux, windows and macos. go to actions and the latest succsesful workflow will have a binary for you. they are bundled together in a zip file.
 Im pretty sure all are 64 bit binaries.
+# Contributing
+Just make a PR with a description of your code and what it adds. 
