@@ -1,13 +1,1 @@
-#include <stdio.h>
-declare void test int t
-Call printf("Calling a self declared function\n")
-t = 6
-end
-main then
-Call printf("Hello World From SimpleC!\n")
-int t = 0
-Call test(t)
-if t = 6 then
-Call printf("t equals 6\n")
-end
-end
+32768

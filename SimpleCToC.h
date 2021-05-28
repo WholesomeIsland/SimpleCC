@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "keywords.h"
+#include "ArgParser.h"
 using namespace std;
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if (from.empty())
@@ -86,4 +87,46 @@ std::string Process(std::string strtp) {
     }
     UnInitKeywords();
     return rtnval;
+}
+int run(char** argv, int argc){
+    int code = 0;
+    std::string command = std::string();
+    command += "clang ";
+    Arguments args = getArgs(argv, argc);
+    for(std::string i : args.iFiles){
+        command += i + ".c";
+        command += " ";
+    }
+    if(args.oFile == ""){args.oFile = "a.out";}
+    command += "-o ";
+    command += args.oFile;
+    printf("%s", args.oFile.c_str());
+    switch(args.ctype){
+        case TRANSPILE:
+            for(std::string s : args.iFiles){
+                ofstream of = ofstream(s + ".c");
+                of << Process(readFile(s));
+                of.close();
+            }
+            break;
+        case COMPILE:
+            for(std::string s : args.iFiles){
+                ofstream of = ofstream(s + ".c");
+                of << Process(readFile(s));
+                of.close();
+            }
+            code = system(command.c_str());
+            return code;
+            break;
+        case RUN:
+            code = system(command.c_str());
+            code += system("./a.out");
+            return code;
+            break;
+        default:
+            std::cout << "ERROR: Compile Type Not Specified, Quitting." << std::endl;
+            exit(1);
+            break;
+    }
+    return code;
 }
