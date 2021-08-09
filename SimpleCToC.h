@@ -100,7 +100,9 @@ int run(char** argv, int argc){
     if(args.oFile == ""){args.oFile = "a.out";}
     command += "-o ";
     command += args.oFile;
-    printf("%s", args.oFile.c_str());
+    printf("output file: %s\n", args.oFile.c_str());
+
+    printf("%s\n", to_string(args.ctype).c_str());
     switch(args.ctype){
         case TRANSPILE:
             for(std::string s : args.iFiles){
@@ -114,11 +116,19 @@ int run(char** argv, int argc){
                 ofstream of = ofstream(s + ".c");
                 of << Process(readFile(s));
                 of.close();
+                command += s + ".c";
             }
             code = system(command.c_str());
             return code;
             break;
         case RUN:
+	    for(std::string s : args.iFiles){
+	    ofstream of = ofstream(s + ".c");
+		of << Process(readFile(s));
+		of.close();
+		command += s + ".c";
+	    }
+	    printf("%s", command.c_str());
             code = system(command.c_str());
             code += system("./a.out");
             return code;
