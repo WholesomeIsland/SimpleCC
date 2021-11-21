@@ -52,7 +52,7 @@ To build scc, you need,
 6. msbuild in your path <-- Not necessarily needed if building with VS
 ## building
 
-you can use cmake to build projects for your build system of choice, or you can use the included VS2019 prject files in the build directory.
+you can use cmake to build projects for your build system of choice, or you can use cmake to generate project files for Visual Studio.
 #### CMake
 ```
 Ubuntu
