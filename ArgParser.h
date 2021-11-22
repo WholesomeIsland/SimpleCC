@@ -2,7 +2,8 @@
 #include <string>
 #include <cstring>
 #include <vector>
-#include <getopt.h>
+#define CXXOPTS_NO_REGEX
+#include "cxxopts.hpp"
 enum CompileType {
     TRANSPILE,
     COMPILE,
@@ -19,24 +20,24 @@ Arguments getArgs(char** argv, int argc){
     Arguments retval = Arguments();
     int option = 0;
     retval.iFiles = std::vector<std::string>();
-    while((option = getopt(argc, argv, "ctro:")) != -1){
-        switch(option){
-            case 'c':
-                retval.ctype = COMPILE;
-                break;
-            case 't':
-                retval.ctype = TRANSPILE;
-                break;
-            case 'r':
-                retval.ctype = RUN;
-                break;
-            case 'o':
-                retval.oFile = optarg;
-            default:
-                  for (int i = optind; i < argc; i++)
-                    retval.iFiles.push_back(std::string(argv[i]));
-                break;
-        }
+    cxxopts::Options opts("SimpleCC", "Compiler for SimpleC");
+    opts.add_options()("c,compiler", "compile only", cxxopts::value<int>())
+    ("r,run", "compile and run", cxxopts::value<int>())
+    ("t,transpile", "transpile into C only", cxxopts::value<int>())
+    ("o,output", "File to output to", cxxopts::value<std::string>())
+    ("i,input", "Input files", cxxopts::value<std::vector<std::string>>());
+    auto result = opts.parse(argc, argv);
+    if(result["t"].count() == 1){
+        retval.ctype = TRANSPILE;
     }
+    if(result["c"].count() == 1){
+        retval.ctype = COMPILE;
+    }
+    if (result["r"].count() == 1)
+    {
+        retval.ctype = RUN;
+    }
+    retval.oFile = result["o"].as<std::string>();
+    retval.iFiles = result["i"].as<std::vector<std::string>>();
     return retval;
 }

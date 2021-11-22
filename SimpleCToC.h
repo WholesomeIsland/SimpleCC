@@ -74,7 +74,7 @@ std::string Process(std::string strtp) {
             spltmp[it] = nline;
             spltmp[it].append("){");
         }
-        for(int i = 0; i <= 11; i++)
+        for(int i = 0; i <= 9; i++)
         {
         	keyword var = keywords[i];
             replaceAll(spltmp[it], var.scword, var.cword);
@@ -90,7 +90,7 @@ std::string Process(std::string strtp) {
 }
 int run(char** argv, int argc){
     int code = 0;
-    std::string command = std::string();
+    std::string command = std::string(" ");
     command += "clang ";
     Arguments args = getArgs(argv, argc);
     for(std::string i : args.iFiles){

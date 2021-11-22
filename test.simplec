@@ -1,0 +1,7 @@
+declare void test int t
+Call printf("t is %d", t)
+end
+
+main then 
+Call test(5)
+end
