@@ -80,12 +80,11 @@ std::string Process(std::string strtp) {
             replaceAll(spltmp[it], var.scword, var.cword);
         }
     }
-    string rtnval = string();
+    string rtnval = string(); rtnval +=string("#include <boopes.h>\n");
     for (int it = 0; it != spltmp.size(); it++)
     {
         rtnval += spltmp[it];
     }
-    UnInitKeywords();
     return rtnval;
 }
 int run(char** argv, int argc){

@@ -35,9 +35,3 @@ void InitKeywords() {
     keywords[9].cword = " || ";
     keywords[9].scword = " or ";
 }
-void UnInitKeywords() {
-    for (int i = 0; i < 10; i++)
-    {
-        free(&(keywords[i]));
-    }
-}

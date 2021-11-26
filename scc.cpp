@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	}*/
 	run(argv, argc);
 		vector<sccError> errors = sccGetErrors(readFile(argv[1]));
-		for(int i = 0; i < errors.size(); i++){
+    for(int i = 0; i < errors.size(); i++){
       std::cout << errors[i].error << std::endl;
     }
 	return 0;
