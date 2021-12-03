@@ -14,6 +14,7 @@ struct Arguments {
     CompileType ctype;
     std::string oFile;
     std::vector<std::string> iFiles;
+    bool isHelp;
 };
 
 Arguments getArgs(char** argv, int argc){
@@ -25,7 +26,8 @@ Arguments getArgs(char** argv, int argc){
     ("r,run", "compile and run", cxxopts::value<int>())
     ("t,transpile", "transpile into C only", cxxopts::value<int>())
     ("o,output", "File to output to", cxxopts::value<std::string>())
-    ("i,input", "Input files", cxxopts::value<std::vector<std::string>>());
+    ("i,input", "Input files", cxxopts::value<std::vector<std::string>>())
+     ("h,help", "help", cxxopts::value<bool>());
     auto result = opts.parse(argc, argv);
     if(result["t"].count() == 1){
         retval.ctype = TRANSPILE;
@@ -36,6 +38,11 @@ Arguments getArgs(char** argv, int argc){
     if (result["r"].count() == 1)
     {
         retval.ctype = RUN;
+    }
+    retval.isHelp = result["h"].as<bool>();
+    if (retval.isHelp)
+    {
+        return retval;
     }
     retval.oFile = result["o"].as<std::string>();
     retval.iFiles = result["i"].as<std::vector<std::string>>();

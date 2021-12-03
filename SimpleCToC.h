@@ -6,6 +6,7 @@
 #include "keywords.h"
 #include "ArgParser.h"
 using namespace std;
+string helpstr = "Welcome to scc, the simpleC compiler.\nflags:\n-h,--help display this message.\n-t,--transpile: default mode, transpiles SimpleC to C\n-c,--compile: transpile, then compile SimpleC with clang.\n-r,--run: compile with clang, then run the output.\nusage:\nscc [inputfile] [-t, -c, -r] (extra flags)";
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if (from.empty())
         return;
@@ -92,6 +93,7 @@ int run(char** argv, int argc){
     std::string command = std::string(" ");
     command += "clang ";
     Arguments args = getArgs(argv, argc);
+    if (args.isHelp) { printf(helpstr.c_str()); return 0; }
     for(std::string i : args.iFiles){
         command += i + ".c";
         command += " ";
@@ -125,7 +127,6 @@ int run(char** argv, int argc){
 	    ofstream of = ofstream(s + ".c");
 		of << Process(readFile(s));
 		of.close();
-		command += s + ".c";
 	    }
 	    printf("%s", command.c_str());
             code = system(command.c_str());
