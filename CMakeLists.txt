@@ -3,6 +3,6 @@ project(scc)               # Create project scc
 
 # Add main.cpp file of project root directory as source file
 set(SOURCE_FILES scc.cpp SimpleCToC.h keywords.h libscc.h ArgParser.h)
-
-# Add executable target with source files listed in SOURCE_FILES variable
+set_property(TARGET scc PROPERTY CXX_STANDARD 17)
+set_property(TARGET scc PROPERTY CXX_STANDARD_REQUIRED 17)
 add_executable(scc ${SOURCE_FILES})
